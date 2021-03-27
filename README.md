@@ -1,9 +1,10 @@
-Software yang dibutuhkan untuk menjalankan aplikasi soal 4B
-a. XAMPP
-b. browser
-
-cara menjalankan website aplikasi soal 4B
-a. jalankan XAMPP
-b. buat database dengan nama tes pada phpmyAdmin
-c. import data sql yang ada pada folder 4B
-d. akses website di localhost/dumbways
+Software yang dibutuhkan untuk menjalankan aplikasi soal 4B<br>
+a. XAMPP<br>
+b. browser<br>
+<br>
+<br>
+cara menjalankan website aplikasi soal 4B<br>
+a. jalankan XAMPP<br>
+b. buat database dengan nama tes pada phpmyAdmin<br>
+c. import data sql yang ada pada folder 4B<br>
+d. akses website di localhost/dumbways<br>
