@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+
     <style type="text/css">
         .wrapper{
             width: 650px;
@@ -63,6 +64,7 @@
                                         echo "<th>stok</th>";
                                         echo "<th>deskripsi</th>";
                                         echo "<th>image</th>";
+                                        echo "<th>action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
@@ -76,14 +78,16 @@
 
                                         echo "<td>";
                                            
-                                            echo "<button type='button' class='btn btn-success pull-right'>pinjam</button>";
-                                            
+                                            ?><?php echo "<input class='btn btn-success pull-right' data-toggle='modal' data-target='#myModal' value='Pinjam'" ?>
+                                          <?php if($row['stok']==0) 
+                                          {
+                                               echo " disabled=disabled ";
+                                          }
+                                        ?>
+                                         />
+                                         <?php
 
-
-
-
-
-                                            echo "<button type='button' class='btn btn-success pull-right'>kembalikan</button>";
+                                            echo "<input class='btn btn-success pull-right' data-toggle='modal' data-target='#myModal' value='Kembalikan'/>";
                                         echo "</td>";
                                     echo "</tr>";
                                 }
@@ -101,6 +105,49 @@
                     // Close connection
                     mysqli_close($link);
                     ?>
+
+ <div class="container">
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Data peminjaman</h4>
+        </div>
+        <div class="modal-body">
+          <p>Terimakasih telah meminjam buku</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Data pengembalian</h4>
+        </div>
+        <div class="modal-body">
+          <p>Terimakasih telah mengembalikan buku</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
                 </div>
             </div>
         </div>
